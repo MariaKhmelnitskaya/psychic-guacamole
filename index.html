@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">z
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Map</title>
+    <link href="styles/bootstrap.min.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
+    <script src="js/main.js"></script>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#">About</a></li>
+            <li role="presentation"><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+
+        <h3 class="text-muted">Web</h3>
+      </div>
+
+      <div id="map"></div>
+
+      <footer class="footer">
+        <p>&copy; 2016 Maria Khmelnitskaya Company, Inc.</p>
+      </footer>
+
+    </div> 
+      <script>
+         var map;
+
+         mapOptions ={
+            center: {lat: -34.397, lng: 150.644},
+            zoom: 10
+         }
+
+         function initMap() {
+         map = new google.maps.Map(document.getElementById('map'), mapOptions);
+         }
+
+      </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJE1n8C6oapp08QnWHyyBZX4cJuDCqggY&callback=initMap" async defer></script>
+      <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
