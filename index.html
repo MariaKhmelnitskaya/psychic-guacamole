@@ -8,6 +8,7 @@
     <link href="styles/bootstrap.min.css" rel="stylesheet">
     <link href="styles/main.css" rel="stylesheet">
     <script src="js/main.js"></script>
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
   </head>
 
   <body>
@@ -34,18 +35,37 @@
     </div> 
       <script>
          var map;
+        
+          var cities=[]; 
+     
+        cities[1]={name:"Tiran",lat: 41.18, lng: 19.49};
+        cities[2]={name:"Kabul",lat: 34.28, lng: 69.11};
+        cities[3]={name:"Algiers",lat: 36.42, lng: 3.08};
+      
+       function changeCity(){
+          if (i<3) {
+              i++;
+              map.setCenter(cities[i]);
+            }
+          else {i=1;  map.setCenter(cities[i]);}
+       }
 
-         mapOptions ={
-            center: {lat: -34.397, lng: 150.644},
-            zoom: 10
+        
+
+         mapOptions={
+            center: cities[1],
+            zoom: 8
          }
-
+         
          function initMap() {
          map = new google.maps.Map(document.getElementById('map'), mapOptions);
          }
+         var i=1;
+         setInterval(function(){initMap(); changeCity()}, 3000);
+
+        
 
       </script>
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJE1n8C6oapp08QnWHyyBZX4cJuDCqggY&callback=initMap" async defer></script>
-      <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
