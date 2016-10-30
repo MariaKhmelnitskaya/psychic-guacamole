@@ -35,17 +35,28 @@
     </div> 
       <script>
          var map;
+
+
         
-          var cities=[]; 
+          var cities=
+          [
+          {name:"Tiran",lat: 41.18, lng: 19.49},{name:"Kabul",lat: 34.28, lng: 69.11},{name:"Algiers",lat: 36.42, lng: 3.08},
+          {name:"Andorra la Vella",lat: 42.31, lng: 1.32},{name:"Luanda",lat: 8.50, lng: 13.15},{name:"Vienna",lat: 48.12, lng: 16.22},
+          {name:"Buenos Iries",lat: 36.30, lng: 60.00},{name:"Yerevan",lat: 40.10, lng: 44.31}
+          ]; 
      
-        cities[1]={name:"Tiran",lat: 41.18, lng: 19.49};
-        cities[2]={name:"Kabul",lat: 34.28, lng: 69.11};
-        cities[3]={name:"Algiers",lat: 36.42, lng: 3.08};
+     //cities[1]={name:"Tiran",lat: 41.18, lng: 19.49};
+     // cities[2]={name:"Kabul",lat: 34.28, lng: 69.11};
+     //cities[3]={name:"Algiers",lat: 36.42, lng: 3.08};
+
       
+
+  
        function changeCity(){
-          if (i<3) {
+          if (i<8) {
               i++;
               map.setCenter(cities[i]);
+
             }
           else {i=1;  map.setCenter(cities[i]);}
        }
